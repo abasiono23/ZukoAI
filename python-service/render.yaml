@@ -12,6 +12,6 @@ services:
       - key: CORS_ORIGINS
         value: https://your-frontend-domain.example
       - key: BMONI_API_BASE_URL
-        sync: false
+        value: https://embedded-dev.bmoni.com
       - key: BMONI_API_TOKEN
         sync: false
