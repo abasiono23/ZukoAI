@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: zukoai-python-service
+    runtime: python
+    rootDir: python-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: SERVICE_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://your-frontend-domain.example
+      - key: BMONI_API_BASE_URL
+        sync: false
+      - key: BMONI_API_TOKEN
+        sync: false
